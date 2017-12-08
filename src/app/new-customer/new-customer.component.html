@@ -1,0 +1,70 @@
+
+<div class="ui container">
+  <div class="ui center aligned green inverted segment ">
+    <label>NEW CUSTOMER: {{name |uppercase}}</label>
+  </div>
+  <br>
+  <div class="ui text container">
+    <form class="ui lagre form">
+      
+  
+        <div class="field">
+          <label>First name</label>
+          <div class="ui left icon input">
+            <i aria-hidden="true" class="user circle large icon"></i>
+            <input type="text" placeholder=" First Name" />
+          </div>
+        </div>
+  
+        <div class="field">
+          <label>Last name</label>
+          <div class="ui left icon input">
+            <i aria-hidden="true" class="user circle large icon"></i>
+            <input type="text" placeholder=" Last Name" />
+          </div>
+        </div>
+      
+  
+      
+        <div class="field">
+          <label>Telephone number </label>
+          <div class="ui left icon input">
+            <i aria-hidden="true" class="phone large icon"></i>
+            <input type="text" placeholder=" Telephone number" />
+          </div>
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <div class="ui left icon input">
+            <i aria-hidden="true" class="lock large icon"></i>
+            <input type="text" placeholder=" Password" />
+          </div>
+        </div>
+      
+  
+      
+        <div class="field">
+          <label>User Name</label>
+          <div class="ui left icon input">
+            <i aria-hidden="true" class="user outline large icon"></i>
+            <input type="text" placeholder=" User Name " name="name" [(ngModel)]="name" />
+          </div>
+        </div>
+  
+        <div class="field">
+          <label> Is active </label>
+  
+          <input type="checkbox" class="hidden" readonly="" tabindex="0" />
+  
+        </div>
+      
+      <div class="ui center aligned container">
+        <button type="submit" class="ui green button" role="button">
+          <i class="send icon "></i>Submit</button>
+      </div>
+  
+      <div class="ui hidden divider">
+      </div>
+    </form>
+  </div>
+</div>
