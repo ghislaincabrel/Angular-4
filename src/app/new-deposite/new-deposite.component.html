@@ -1,39 +1,39 @@
-<div class="ui green inverted center aligned segment">NEW DEPOSITE</div> 
+<div class="ui green inverted center aligned segment">NEW DEPOSITE</div>
 <div class="ui text container">
 
-  <form class="ui large form">
+  <form class="ui large form" #newDeposite="ngForm" (ngSubmit)="onSubmit(newDeposite.value)">
 
     <div class="field">
       <label>Customer</label>
       <div class="ui left icon input">
         <i aria-hidden="true" class="user  icon"></i>
-        <input type="text" placeholder="Customer" />
+        <input type="text" placeholder="Customer" name="customer" ngModel required/>
       </div>
     </div>
 
     <div class="field">
       <label>Iterms</label>
-      <input placeholder="First Name" />
+      <input placeholder="iterm" name="iterm" ngModel required/>
     </div>
 
-    
+
 
     <div class="equal width fields">
-    <div class="field">
-      <label>Deposite Date</label>
-      <div class="ui left icon input">
-        <i aria-hidden="true" class="calendar icon"></i>
-        <input type="date" placeholder="Deposite Date" />
+      <div class="field">
+        <label>Deposite Date</label>
+        <div class="ui left icon input">
+          <i aria-hidden="true" class="calendar icon"></i>
+          <input type="date" placeholder="Deposite Date" name="depositDate" ngModel required/>
+        </div>
       </div>
-    </div>
 
-    <div class="field">
-      <label>Due Date</label>
-      <div class="ui left icon input">
-        <i aria-hidden="true" class="add to calendar icon "></i>
-        <input type="date" placeholder="Due Date" />
+      <div class="field">
+        <label>Due Date</label>
+        <div class="ui left icon input">
+          <i aria-hidden="true" class="add to calendar icon "></i>
+          <input type="date" placeholder="Due Date" name="dueDate" ngModel required />
+        </div>
       </div>
-    </div>
 
     </div>
 
@@ -41,7 +41,7 @@
       <label>Qty</label>
       <div class="ui left icon input">
         <i aria-hidden="true" class="balance icon"></i>
-        <input type="text" placeholder="Quantity" />
+        <input type="number" placeholder="Quantity" name="quantity" ngModel required/>
       </div>
     </div>
 
@@ -49,19 +49,58 @@
       <label>Number of Payement</label>
       <div class="ui left icon input">
         <i aria-hidden="true" class=""></i>
-        <input type="text" placeholder="Number of Payement" />
+        <input type="number" placeholder="Number of Payement" name="numberOfPayement" ngModel />
       </div>
     </div>
 
     <div class="field">
       <label>Status</label>
+      <select name="skills" ngModel required name="status">
+        <option value="">Skills</option>
+        <option value="pending">Pending</option>
+        <option value="washing">washing</option>
+        <option value="Ready and paid"> Ready and paid</option>
+        <option value="Ready and not paid">Ready and not paid</option>
+        <option value="collected">collected</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Label</label>
       <div class="ui left icon input">
         <i aria-hidden="true" class=""></i>
-        
+        <input type="text" placeholder="Label" ngModel required name="label" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Cost</label>
+      <div class="ui left icon input">
+        <i aria-hidden="true" class="dollar icon"></i>
+        <input type="nmber" placeholder="cost" ngModel required name="cost" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Total</label>
+      <div class="ui left icon input">
+        <i aria-hidden="true" class="dollar icon"></i>
+        <input type="number" placeholder="Total" ngModel required name="total" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Amount Paid</label>
+      <div class="ui left icon input">
+        <i aria-hidden="true" class="dollar icon"></i>
+        <input type="number" placeholder="Amount Paid" ngModel required name="amountPaid" />
       </div>
     </div>
     <div class="ui center aligned container">
-    <button type="submit" class="ui green button" role="button"><i class="send icon"></i>Submit</button>
+      <button type="submit" class="ui green button" role="button" [disabled]="!newDeposite.form.valid" >
+        <i class="send icon"></i>Submit</button>
+      <button type="reset" class="ui red  button" role="button">
+        <i class=" icon"></i>Reset</button>
     </div>
   </form>
 

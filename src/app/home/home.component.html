@@ -1,0 +1,53 @@
+<div class="maimClass">
+  <div class="ui text container">
+
+  </div>
+</div>
+
+
+<carousel>
+  <slide>
+<img src="../assets/images/suprising.jpg" alt="First slide" style="display: block; width: 100%;">
+
+    <div class="carousel-caption d-none d-md-block">
+
+      <div class="ui text container">
+
+        <div class="ui middle aligned center aligned grid">
+          <div class="column">
+            <h2 class="ui red  image header">
+              <div class="content">
+                LOGIN
+              </div>
+            </h2>
+            <form class="ui large form" #f="ngForm" (ngSubmit)="OnSubmit(f.value)">
+              <div class="ui stacked secondary  segment">
+                <div class="field">
+                  <div class="ui large left icon input">
+                    <i class="user icon"></i>
+                    <input type="text" name="userName" placeholder="userName" [(ngModel)]="userName">
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui large left icon input">
+                    <i class="lock icon"></i>
+                    <input type="password" name="password" placeholder="Password" [(ngModel)]="password">
+                  </div>
+                </div>
+                <div>
+                  <button type="submit" class="ui fluid large teal submit button">
+                    <i class="send icon"></i>Login</button>
+                </div>
+              </div>
+
+              <div class="ui error message"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </slide>
+
+</carousel>

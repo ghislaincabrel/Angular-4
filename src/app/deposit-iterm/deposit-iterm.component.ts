@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-deposit-iterm',
@@ -8,11 +8,10 @@ import { Router } from '@angular/router';
 })
 export class DepositItermComponent implements OnInit {
 
-  constructor(private _route: Router) { }
+  constructor() { }
 
   ngOnInit() {
+
   }
-  OnNewDeposite() {
-    this._route.navigate(['/newDeposite']);
-  }
+
 }

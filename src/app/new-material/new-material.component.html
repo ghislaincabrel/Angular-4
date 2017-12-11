@@ -1,0 +1,43 @@
+<div class="ui container">
+  <div class="ui center aligned green inverted segment ">
+    <label>NEW MATERAILS: {{name |uppercase}}</label>
+  </div>
+  <br>
+  <div class="ui text container">
+    <form class="ui form" #newMaterials="ngForm" (ngSubmit)="onSubmit(newMaterials.value)">
+      <div class="equal width fields">
+
+        <div class="field">
+          <label for="form-input-control-first-name">N</label>
+          <input type="number" placeholder=" Number" name="number" ngModel required />
+        </div>
+
+        <div class="field">
+          <label for="form-input-control-last-name">Materails</label>
+          <div class="ui left icon input">
+            <i aria-hidden="true" class="snowflake outline icon"></i>
+            <input type="text" placeholder=" Materials" ngModel required name="materials" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="form-input-control-last-name">Cost</label>
+          <div class="ui left icon input">
+            <i aria-hidden="true" class="dollar icon"></i>
+            <input type="number" placeholder=" Cost" ngModel required name="cost" />
+          </div>
+        </div>
+
+      </div>
+
+      <div class="field">
+        <div class="ui center aligned container">
+          <button type="submit" id="form-button-control-public" class="ui green button" role="button">
+            <i class="send icon "></i>Save</button>
+          <button id="form-button-control-public" class="ui red button" role="button">
+            <i class=" icon "></i>Reset</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

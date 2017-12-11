@@ -11,5 +11,7 @@ export class NewDepositeComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onSubmit(value) {
+    console.log(value);
+  }
 }

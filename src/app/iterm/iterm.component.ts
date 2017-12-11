@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-iterm',
@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
 })
 export class ItermComponent implements OnInit {
 
-  constructor(private _route: Router) { }
+
+  constructor() { }
 
   ngOnInit() {
+
   }
-  OnNewIterm() {
-this._route.navigate(['/newIterms']);
-  }
+
 }

@@ -4,14 +4,14 @@
   </div>
   <br>
   <div class="ui text container">
-    <form class="ui form">
+    <form class="ui form" #newIterms="ngForm" (ngSubmit)="onSubmit(newIterms.value)">
       <div class="equal width fields">
 
         <div class="field">
           <label for="form-input-control-first-name">Name</label>
           <div class="ui left icon input">
             <i aria-hidden="true" class="user circle large icon"></i>
-            <input type="text" name="name" placeholder=" Last Name" [(ngModel)]="name" />
+            <input type="text" name="name" placeholder=" Last Name" [(ngModel)]="name" required/>
           </div>
         </div>
 
@@ -19,7 +19,7 @@
           <label for="form-input-control-last-name">Materails</label>
           <div class="ui left icon input">
             <i aria-hidden="true" class="snowflake outline icon"></i>
-            <input type="text" placeholder=" Materials" />
+            <input type="text" placeholder=" Materials" name="materials" ngModel required/>
           </div>
         </div>
 
@@ -27,20 +27,22 @@
           <label for="form-input-control-last-name">Cost</label>
           <div class="ui left icon input">
             <i aria-hidden="true" class="dollar icon"></i>
-            <input type="text"  placeholder=" Cost"  />
+            <input type="number"  placeholder=" Cost" name="cost" ngModel required/>
           </div>
         </div>
 
       </div>
       <div class="field">
         <label for="form-textarea-control-opinion">Description</label>
-        <textarea id="form-textarea-control-opinion" placeholder="Opinion" rows="5">
+        <textarea id="form-textarea-control-opinion" placeholder="Opinion" rows="5" name="description" ngModel required>
         </textarea>
       </div>
       <div class="field">
         <div class="ui center aligned container">
-          <button id="form-button-control-public" class="ui green button" role="button">
+          <button id="form-button-control-public" class="ui green button" role="button" type="submit" [disabled]="!newIterms.form.valid" >
             <i class="send icon "></i>Save</button>
+            <button  class="ui red button" role="button" type="reset">
+              <i class=" icon "></i>Reset</button>
         </div>
       </div>
     </form>

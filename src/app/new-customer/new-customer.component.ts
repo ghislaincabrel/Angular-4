@@ -11,5 +11,7 @@ export class NewCustomerComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onSubmit(value) {
+    console.log(value);
+  }
 }

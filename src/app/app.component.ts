@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ServicesService } from './services.service';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 
 @Component({

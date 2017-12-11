@@ -11,5 +11,8 @@ export class NewItermsComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onSubmit(value) {
+    console.log(value);
+   
+  }
 }

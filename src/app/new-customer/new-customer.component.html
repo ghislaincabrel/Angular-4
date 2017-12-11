@@ -1,18 +1,18 @@
 
 <div class="ui container">
   <div class="ui center aligned green inverted segment ">
-    <label>NEW CUSTOMER: {{name |uppercase}}</label>
+    <label>NEW CUSTOMER: {{username |uppercase}}</label>
   </div>
   <br>
-  <div class="ui text container">
-    <form class="ui lagre form">
+  <div class="ui text container form" >
+    <form class="ui large form" #newCustomer="ngForm" (ngSubmit)="onSubmit(newCustomer.value)">
       
   
         <div class="field">
           <label>First name</label>
           <div class="ui left icon input">
             <i aria-hidden="true" class="user circle large icon"></i>
-            <input type="text" placeholder=" First Name" />
+            <input type="text" placeholder=" First Name" name="firstName" ngModel required/>
           </div>
         </div>
   
@@ -20,7 +20,7 @@
           <label>Last name</label>
           <div class="ui left icon input">
             <i aria-hidden="true" class="user circle large icon"></i>
-            <input type="text" placeholder=" Last Name" />
+            <input type="text" placeholder=" Last Name"  name ="lastName" ngModel required/>
           </div>
         </div>
       
@@ -30,14 +30,14 @@
           <label>Telephone number </label>
           <div class="ui left icon input">
             <i aria-hidden="true" class="phone large icon"></i>
-            <input type="text" placeholder=" Telephone number" />
+            <input type="number" placeholder=" Telephone number" name ="telephoneNumber" ngModel required/>
           </div>
         </div>
         <div class="field">
           <label>Password</label>
           <div class="ui left icon input">
             <i aria-hidden="true" class="lock large icon"></i>
-            <input type="text" placeholder=" Password" />
+            <input type="password" placeholder=" Password"  name="password" ngModel required/>
           </div>
         </div>
       
@@ -47,20 +47,22 @@
           <label>User Name</label>
           <div class="ui left icon input">
             <i aria-hidden="true" class="user outline large icon"></i>
-            <input type="text" placeholder=" User Name " name="name" [(ngModel)]="name" />
+            <input type="text" placeholder=" User Name " name="username" [(ngModel)]="username" required/>
           </div>
         </div>
   
         <div class="field">
           <label> Is active </label>
   
-          <input type="checkbox" class="hidden" readonly="" tabindex="0" />
+          <input type="checkbox" class="hidden" readonly="" tabindex="0" name="checkbox" ngModel />
   
         </div>
       
       <div class="ui center aligned container">
-        <button type="submit" class="ui green button" role="button">
+        <button type="submit" class="ui green button" role="button" [disabled]="!newCustomer.form.valid" >
           <i class="send icon "></i>Submit</button>
+          <button type="reset" class="ui red button" role="button" >
+            <i class="reset icon "></i>Reset</button>
       </div>
   
       <div class="ui hidden divider">

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
+import { ServicesService } from '../services.service';
+import { PipePipe } from './pipe.pipe';
+import 'rxjs/add/operator/do';
 
 @Component({
   selector: 'app-user',
@@ -8,11 +11,13 @@ import {Router} from '@angular/router';
 })
 export class UserComponent implements OnInit {
 
-  constructor(private _route: Router) { }
+
+  constructor() {
+
+  }
 
   ngOnInit() {
   }
-  OnNewUser() {
-    this._route.navigate(['/newUser']);
-  }
+
+
 }

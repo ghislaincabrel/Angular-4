@@ -1,7 +1,7 @@
 <div>
   <div class="ui teal inverted huge pointing secondary menu">
     <div class="right menu">
-      <button class="ui red small  icon  right floated left labeled button" role="button" (click)="OnNewUser()">
+      <button class="ui red small  icon  right floated left labeled button" role="button" (click)="onLock()" >
         <i aria-hidden="true" class="sign out icon"></i> Logout</button>
     </div>
   </div>
@@ -14,26 +14,28 @@
     <div class="four wide column">
       <div class="ui large  fluid vertical tabular menu">
        
-        <a class="item" [routerLink]="['/user']" routerLinkActive="active">USer</a>
+        <a class="item" [routerLink]="['/dashboard/user/userT']" routerLinkActive="active">USer</a>
         <br>
-        <a class="item" [routerLink]="['/customer']" routerLinkActive="active">Customer </a>
+        <a class="item" [routerLink]="['/dashboard/customer/customerT']" routerLinkActive="active">Customer </a>
 
         <hr>
         <br>
 
-        <a class="item" [routerLink]="['/dashboard']" routerLinkActive="active">Dasboard</a>
+        <a class="item" [routerLink]="['/dashboard/contentDashboard']" routerLinkActive="active">Dasboard</a>
         <br>
-        <a class="item" [routerLink]="['/deposit-iterm']" routerLinkActive="active">Deposit Iterms</a>
+        <a class="item" [routerLink]="['/dashboard/deposit-iterm/depositeT']" routerLinkActive="active">Deposit Iterms</a>
         <br>
-        <a class="item" [routerLink]="['/iterm']" routerLinkActive="active">Iterms</a>
+        <a class="item" [routerLink]="['/dashboard/iterm/itermT']" routerLinkActive="active">Iterms</a>
         <br>
-        <a class="item" [routerLink]="['/cleaning-materials']" routerLinkActive="active">Cleaning Materials</a>
+        <a class="item" [routerLink]="['/dashboard/cleaning-materials/materialT']" routerLinkActive="active">Cleaning Materials</a>
         
       </div>
     
     </div>
     <div class="stretched twelve wide column">
-      <div class="ui segment">
+      <div class="ui ">
+        <flash-messages></flash-messages>
+        <br>
       <router-outlet></router-outlet>
     </div>
     </div>
